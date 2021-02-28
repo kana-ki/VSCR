@@ -1,0 +1,10 @@
+.message__component {
+    border: 0px solid transparent;
+    border-radius: 12px;
+    background-color: #3A83F4;
+    width: 70%;
+}
+
+.message__component p {
+    margin: 0;
+}

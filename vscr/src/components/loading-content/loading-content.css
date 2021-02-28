@@ -1,4 +1,10 @@
-.spinner__component {
+.loading-content__component {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.loading-content__spinner {
     height: 150px;
     width: 150px;
     margin: 15px;

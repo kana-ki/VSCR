@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Client from "../client/Client.component";
 import { config } from "../../Config.js"
-import Spinner from "../spinner/Spinner.component"
+import LoadingContent from "../loading-content/LoadingContent.component"
 
 class Setup extends Component {
     constructor(props) {
@@ -63,7 +63,7 @@ class Setup extends Component {
 
     render() {
         if (this.state.ws === null) {
-            return <Spinner />
+            return <LoadingContent />
         } else {
             return <Client websocket={this.state.ws} />
         }

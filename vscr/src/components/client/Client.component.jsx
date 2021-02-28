@@ -38,8 +38,6 @@ class Client extends Component {
 
         try {
             websocket.send(this.state.message);
-            const textArea = document.querySelector(".client__textarea");
-            textArea.innerHTML = "";
         } catch (error) {
             console.log(error);
         }
