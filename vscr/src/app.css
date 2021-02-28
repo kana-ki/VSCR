@@ -9,6 +9,8 @@
 html {
     font-size: 18px;
     color: var(--main-font-colour);
+    height: 100%;
+    background-color: var(--secondary-background-colour);
 }
 
 .app__component {
@@ -19,8 +21,6 @@ html {
 
 main {
     width: 850px;
-    height: 100vh;
-    background-color: var(--secondary-background-colour);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -28,6 +28,8 @@ main {
 
 @media (max-width: 850px) {
     main {
-        width: calc(100% - 15px);
+        width: 100%;
+        margin-left: 5px;
+        margin-right: 5px;
     }
 }

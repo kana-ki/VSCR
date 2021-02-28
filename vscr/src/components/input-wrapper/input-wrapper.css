@@ -3,6 +3,8 @@
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    margin-top: 10px;
+    margin-bottom: 15px;
 }
 
 .input-wrapper__component .input__component {
@@ -19,6 +21,31 @@
     justify-content: center;
 }
 
-.input-wrapper__component .send-button__component button {
-    margin-left: 10px;
+.input-wrapper__component textarea{
+    border: 1px solid var(--tertiary-font-colour);
+    border-radius: 15px;
+    background-color: transparent;
+    max-width: 70%;
+    width: 70%;
+    min-height: 25px;
+    max-height: 130px;
+    font-size: .9rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: var(--secondary-font-colour);
+    padding: 5px;
+}
+
+.input-wrapper__component textarea:focus {
+    border: none;
+}
+
+.input-wrapper__component textarea:focus {
+    border: 2px solid var(--tertiary-font-colour);
+    border-radius: 15px;
+    outline-offset: 0px;
+    outline: none;
 }

@@ -1,33 +1,16 @@
 import React, { Component } from 'react'
-import Input from '../input/Input.component'
-import SendButton from '../submit-button/SendButton.component'
+import SendButton from '../send-button/SendButton.component'
 import "./input-wrapper.css";
 
 class InputWrapper extends Component {
     constructor(props) {
         super(props);
-
-        this.state = {
-            message: ""
-        };
-    }
-
-    sendData = (data) => {
-        this.props.parentCallBack(data);
-    }
-    
-    setMessageState = (value) => {
-        this.setState({
-            message: value
-        })
-        console.log(this.state.message)
-        this.sendData(this.state.message);
     }
 
     render() {
         return (
             <div className="input-wrapper__component">
-                <Input onChange={(value) => this.setMessageState(value)}/>
+                <textarea type="text" onChange={(event) => { this.props.onChange(event.target.value) }}></textarea>
                 <SendButton sendEvent={this.props.sendEvent}/>
             </div>
         )
