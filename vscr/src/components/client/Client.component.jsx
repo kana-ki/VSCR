@@ -1,5 +1,9 @@
 import React, { Component } from 'react'
 import "./client.css";
+import Conversation from "../conversation/Conversation.component"
+import InputWrapper from "../input-wrapper/InputWrapper.component"
+import Input from '../input/Input.component';
+import SendButton from '../submit-button/SendButton.component';
 
 class Client extends Component {
     constructor(props) {
@@ -10,26 +14,26 @@ class Client extends Component {
             conversation: []
         };
 
-        const { websocket } = this.props;
+        // const { websocket } = this.props;
 
-        websocket.onmessage = (event) => {
-            let message = event.data;
-            const messageContainer = document.querySelector(".stranger__message");
-            if (message === "DEVDIS") {
-                messageContainer.innerHTML = "Stranger Disconnected";
-            } else if (message === "DEVCON") {
-                messageContainer.innerHTML = "Stranger Connected";
-            } else {
-                let strangerMessage = message.split("MSGRCV")[1];
-                messageContainer.innerHTML = strangerMessage;
+        // websocket.onmessage = (event) => {
+        //     let message = event.data;
+        //     const messageContainer = document.querySelector(".stranger__message");
+        //     if (message === "DEVDIS") {
+        //         messageContainer.innerHTML = "Stranger Disconnected";
+        //     } else if (message === "DEVCON") {
+        //         messageContainer.innerHTML = "Stranger Connected";
+        //     } else {
+        //         let strangerMessage = message.split("MSGRCV")[1];
+        //         messageContainer.innerHTML = strangerMessage;
                 
-                this.setState({
-                    conversation: this.state.conversation.concat(strangerMessage)
-                });
+        //         this.setState({
+        //             conversation: this.state.conversation.concat(strangerMessage)
+        //         });
 
-                console.log(this.state.conversation);
-            }
-        }      
+        //         console.log(this.state.conversation);
+        //     }
+        // }      
 
     }
 
@@ -44,26 +48,33 @@ class Client extends Component {
 
         event.preventDefault();
     }
-
-    handleMessageChange = (event) => {
-        this.setState({
-            message: event.target.value
-        });
-    }
     
+    setMessageState = (value) => {
+        this.setState({
+            message: value
+        })
+        console.log(this.state.message)
+        console.log("parent")
+    }
+
+    fakeMethod = () => {
+        console.log("I've sent the message", this.state.message);
+    }
+
+    callBackFunction = (childData) => {
+        this.setState({
+            message: childData
+        });
+        console.log("parent getting hit", this.state.message)
+    }
+
     render() {
         return (
             <div className="client__component">
-                <form onSubmit={this.sendMessage}>
-                    <label>Message</label>
-                    <textarea className="client__textarea" type="text" value={this.state.message} onChange={this.handleMessageChange}></textarea>
-                    <button type="submit">Send Message</button>
-                </form>
-
-                <h2>Stranger messages</h2>
-                <div className="stranger__message">
-                    There are no current messages....
-                </div>
+                {/* <Conversation messages={this.state.conversation}/> */}
+                <InputWrapper parentCallBack={this.callBackFunction} sendEvent={this.fakeMethod}/>
+                {/* <Input onChange={(value) => this.setMessageState(value)}></Input> */}
+                {/* <SendButton sendEvent={this.fakeMethod}/> */}
             </div>
         )
     }

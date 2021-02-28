@@ -1,0 +1,18 @@
+.stranger-message__component {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.stranger-message__container {
+    border: 0px solid transparent;
+    border-radius: 12px;
+    background-color: #26252A;
+    width: 70%;
+}
+
+.stranger-message__container p {
+    margin: 5px 10px 5px 10px;
+    font-size: 1rem;
+}

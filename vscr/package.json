@@ -2,7 +2,7 @@
   "name": "vscr",
   "version": "1.0.0",
   "description": "Visual Studio Chat Roulette",
-  "main": "Index.js",
+  "main": "index.js",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",

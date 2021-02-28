@@ -1,0 +1,24 @@
+.input-wrapper__component {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.input-wrapper__component .input__component {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.input-wrapper__component .send-button__component {
+    width: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.input-wrapper__component .send-button__component button {
+    margin-left: 10px;
+}
