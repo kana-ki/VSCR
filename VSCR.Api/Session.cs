@@ -66,7 +66,11 @@ namespace VSCR.Api
             {
                 this._sessionBroker.NotifyOpen(this);
             }
-            if (this.Clients.Count == 0)
+            if (this.Clients.Count == 1)
+            {
+                this._sessionBroker.NotifyAlone(this);
+            }
+            else if (this.Clients.Count == 0)
             {
                 this._sessionBroker.NotifyDormant(this);
             }

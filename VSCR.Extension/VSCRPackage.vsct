@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <Extern href="stdidcmd.h"/>
+  <Extern href="vsshlids.h"/>
+  <Include href="KnownImageIds.vsct" />
+
+  <Commands package="guidVSCRPackage">
+    <Buttons>
+      <Button guid="guidVSCRPackageCmdSet" id="ChatToolWindowCommandId" priority="0x0100" type="Button">
+        <Parent guid="guidSHLMainMenu" id="IDG_VS_WNDO_OTRWNDWS0" />
+        <!--<Icon guid="guidMessageBubbleIcon" id="mainIconId" />-->
+        <Icon guid="ImageCatalogGuid" id="MessageBubble" />
+        <CommandFlag>IconIsMoniker</CommandFlag>
+        <Strings>
+          <ButtonText>Chat Roulette</ButtonText>
+        </Strings>
+      </Button>
+    </Buttons>
+
+  </Commands>
+
+  <Symbols>
+    <GuidSymbol name="guidVSCRPackage" value="{8abfea05-824c-43d0-9466-e084f4890f44}" />
+    <GuidSymbol name="guidVSCRPackageCmdSet" value="{c37ba89f-ac4a-4bb3-b247-62b960fc88d0}">
+      <IDSymbol name="ChatToolWindowCommandId" value="0x0100" />
+    </GuidSymbol>
+    <GuidSymbol name="guidMessageBubbleIcon" value="{39F59862-D9D4-4F7B-804D-8917086239E3}">
+      <IDSymbol name="mainIconId" value="1"/>
+    </GuidSymbol>
+  </Symbols>
+
+</CommandTable>

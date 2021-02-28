@@ -40,6 +40,17 @@ namespace VSCR.Api
             this._activeSessions.TryAdd(session.Id, session);
         }
 
+        internal void NotifyAlone(Session session)
+        {
+            var otherSessions = this._openSessions.Where(s => s.Key != session.Id);
+            if (otherSessions.Any())
+            {
+                var client = session.Clients.Single();
+                var newSession = otherSessions.FirstOrDefault().Value;
+                newSession.ConnectClient(client);
+            }
+        }
+
         internal void NotifyDormant(Session session)
         {
             this._openSessions.TryRemove(session.Id, out _);

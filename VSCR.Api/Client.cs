@@ -55,26 +55,33 @@ namespace VSCR.Api
 
         public async Task<ClientMessage> ReceiveAsync(CancellationToken? cancellationToken = null)
         {
-            var buffer = new byte[1024 * 4];
-            var result = await this.WebSocket.ReceiveAsync(new ArraySegment<byte>(buffer), cancellationToken ?? CancellationToken.None);
-
-            if (result.MessageType == WebSocketMessageType.Text)
+            try
             {
-                var builder = new StringBuilder();
+                var buffer = new byte[1024 * 4];
+                var result = await this.WebSocket.ReceiveAsync(new ArraySegment<byte>(buffer), cancellationToken ?? CancellationToken.None);
 
-                while (true)
+                if (result.MessageType == WebSocketMessageType.Text)
                 {
-                    var part = Encoding.UTF8.GetString(buffer, 0, result.Count);
-                    builder.Append(part);
-                    if (result.EndOfMessage) break;
-                    result = await this.WebSocket.ReceiveAsync(new ArraySegment<byte>(buffer), CancellationToken.None);
+                    var builder = new StringBuilder();
+
+                    while (true)
+                    {
+                        var part = Encoding.UTF8.GetString(buffer, 0, result.Count);
+                        builder.Append(part);
+                        if (result.EndOfMessage) break;
+                        result = await this.WebSocket.ReceiveAsync(new ArraySegment<byte>(buffer), CancellationToken.None);
+                    }
+
+                    var message = builder.ToString();
+                    return new ClientMessage(message, result.MessageType);
                 }
 
-                var message = builder.ToString();
-                return new ClientMessage(message, result.MessageType);
+                return new ClientMessage(null, result.MessageType);
+            } catch (WebSocketException e)
+            {
+                this.Session?.DisconnectClient(this);
+                throw;
             }
-
-            return new ClientMessage(null, result.MessageType);
         }
 
         public async Task SendMessageReceivedAsync(string message)
