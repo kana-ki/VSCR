@@ -62,21 +62,6 @@ class Client extends Component {
     }
 
     render() {
-        const messages = [
-            { data: "Stranger Connected", type: "connect" }, 
-            { data: "Lorem ipsum dolor.", type: "user" }, 
-            { data: "Lorem ipsum dolor sit amet consectetur, adipiscing elit netus.", type: "stranger" },
-            { data: "Lor.", type: "user" },
-            { data: "Lorem ipsum dolor.", type: "stranger" },
-            { data: "Ad lobortis quisque penatibus maecenas id, dictumst torquent venenatis.", type: "stranger" },
-            { data: "Primis torquent pulvinar erat nam conubia dictum etiam magna cum parturient, massa velit est venenatis potenti suscipit cras vel feugiat integer sociosqu, platea ac porttitor non proin mus fringilla mauris consequat.", type: "stranger" },
-            { data: "Lorem ipsum dolor.", type: "user" },
-            { data: "Lo.", type: "stranger" },
-            { data: "Pellentesque vehicula venenatis magna tortor nec, massa maecenas lobortis posuere.", type: "user" },
-            { data: "Urna interdum commodo conubia pellentesque ultrices, ullamcorper vivamus tempor.", type: "stranger" },
-            { data: "Stranger Disconnected", type: "disconnect" }
-        ];
-
         return (
             <div className="client__component">
                 <Conversation messages={this.state.conversation}/>
