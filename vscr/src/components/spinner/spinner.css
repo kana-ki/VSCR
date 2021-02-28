@@ -1,0 +1,19 @@
+.spinner__component {
+    height: 150px;
+    width: 150px;
+    margin: 15px;
+    border: 6px solid var(--secondary-background-colour);
+    border-radius: 100%;
+    border-top: 6px solid white;
+    animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
