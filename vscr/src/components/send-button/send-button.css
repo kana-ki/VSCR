@@ -1,0 +1,26 @@
+.send-button__component button {
+    border: 1px solid var(--tertiary-font-colour);
+    border-radius: 100%;
+    background-color: transparent;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.send-button__component button img {
+    width: 25px;
+    height: 25px;
+}
+
+.send-button__component button:focus {
+    border: none;
+}
+
+.send-button__component button:focus {
+    border: 2px solid var(--tertiary-font-colour);
+    border-radius: 100%;
+    outline-offset: 0px;
+    outline: none;
+}
