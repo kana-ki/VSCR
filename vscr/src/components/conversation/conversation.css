@@ -1,0 +1,13 @@
+.conversation__component {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.conversation__component .stranger-message__container {
+    margin: 10px;
+}
+
+.conversation__component .message__component {
+    margin: 10px;
+}

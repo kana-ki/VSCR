@@ -1,0 +1,35 @@
+:root {
+    --main-background-colour: #000000;
+    --secondary-background-colour: #1D1D1D;
+    --main-font-colour: #FFFFFF;
+    --secondary-font-colour: #909090;
+    --tertiary-font-colour: #494949;
+}
+
+html {
+    font-size: 18px;
+    color: var(--main-font-colour);
+    height: 100%;
+    background-color: var(--secondary-background-colour);
+}
+
+.app__component {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main {
+    width: 850px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media (max-width: 850px) {
+    main {
+        width: 100%;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+}
