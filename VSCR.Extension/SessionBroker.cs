@@ -11,7 +11,7 @@ namespace VSCR.Extension
     public class SessionBroker
     {
 
-        private readonly ClientWebSocket _webSocket;
+        private ClientWebSocket _webSocket;
         private CancellationTokenSource _cancellationTokenSource;
         public event Func<Task> OnDevConnected;
         public event Func<Task> OnDevDisconnected;
@@ -19,15 +19,14 @@ namespace VSCR.Extension
 
         public SessionBroker()
         {
-            this._webSocket = new ClientWebSocket();
             this._cancellationTokenSource = new CancellationTokenSource();
-
         }
 
         public async Task ConnectAsync()
         {
+            this._webSocket = new ClientWebSocket();
             var cancellationToken = this._cancellationTokenSource.Token;
-            await this._webSocket.ConnectAsync(new Uri("ws://localhost:5000/chat"), cancellationToken);
+            await this._webSocket.ConnectAsync(new Uri("wss://visualstudiochatroulette.azurewebsites.net/chat"), cancellationToken);
             if (cancellationToken.IsCancellationRequested)
             {
                 await this._webSocket.CloseAsync(WebSocketCloseStatus.NormalClosure, "Cancellation cancelled", CancellationToken.None);

@@ -76,8 +76,15 @@ namespace VSCR.Extension
                 await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync();
 
                 Paragraph paragraph2 = new Paragraph();
-                paragraph2.Inlines.Add("Connected.\n");
-                paragraph2.Inlines.Add("Finding a developer...");
+                if (result.IsFaulted)
+                {
+                    paragraph2.Inlines.Add("Could not connect.\n");
+                }
+                else
+                {
+                    paragraph2.Inlines.Add("Connected.\n");
+                    paragraph2.Inlines.Add("Finding a developer...");
+                }
                 paragraph2.Foreground = Brushes.Gray;
                 this.ChatTextBlock.Document.Blocks.Add(paragraph2);
 
