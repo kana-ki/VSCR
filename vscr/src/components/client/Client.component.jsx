@@ -60,6 +60,9 @@ class Client extends Component {
             console.log(error);
         }
 
+        this.setState({
+            message: ""
+        });
         event.preventDefault();
     }
     
