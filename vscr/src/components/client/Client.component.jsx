@@ -63,6 +63,9 @@ class Client extends Component {
         this.setState({
             message: ""
         });
+
+        document.querySelector(".input-wrapper__text-area").value = "";
+
         event.preventDefault();
     }
     
