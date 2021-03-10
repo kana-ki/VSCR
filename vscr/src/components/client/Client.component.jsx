@@ -50,6 +50,12 @@ class Client extends Component {
 
         try {
             websocket.send(this.state.message);
+
+            let userMessage = {
+                data: this.state.message,
+                type: "client"
+            }
+            this.setState({ conversation: this.state.conversation.concat(userMessage) });
         } catch (error) {
             console.log(error);
         }
