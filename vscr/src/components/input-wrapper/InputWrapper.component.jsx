@@ -4,6 +4,10 @@ import "./input-wrapper.css";
 
 class InputWrapper extends Component {
     sendMessage = (e) => {
+        if (e.shiftKey) {
+            return;
+        }
+
         if (e.key === "Enter") {
             this.props.sendEvent();
         }
