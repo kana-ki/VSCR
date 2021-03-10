@@ -3,10 +3,6 @@ import SendButton from '../send-button/SendButton.component'
 import "./input-wrapper.css";
 
 class InputWrapper extends Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         return (
             <div className="input-wrapper__component">

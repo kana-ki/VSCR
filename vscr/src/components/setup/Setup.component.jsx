@@ -58,7 +58,7 @@ class Setup extends Component {
 
     check = () => {
         const { ws } = this.state;
-        if (!ws || ws.readyState == WebSocket.CLOSED) this.connect();
+        if (!ws || ws.readyState === WebSocket.CLOSED) this.connect();
     }
 
     render() {
