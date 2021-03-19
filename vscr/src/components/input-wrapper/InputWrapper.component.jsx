@@ -16,8 +16,10 @@ class InputWrapper extends Component {
     render() {
         return (
             <div className="input-wrapper__component">
-                <textarea onKeyUp={this.sendMessage} className="input-wrapper__text-area" type="text" onChange={(event) => { this.props.onChange(event.target.value) }}></textarea>
-                <SendButton sendEvent={this.props.sendEvent}/>
+                <div>
+                    <textarea onKeyUp={this.sendMessage} className="input-wrapper__text-area" type="text" onChange={(event) => { this.props.onChange(event.target.value) }}></textarea>
+                    <SendButton sendEvent={this.props.sendEvent}/>
+                </div>
             </div>
         )
     }

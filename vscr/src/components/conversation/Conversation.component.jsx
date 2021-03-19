@@ -8,18 +8,20 @@ import DisconnectMessage from "../disconnect-message/DisconnectMessage.component
 export class Conversation extends Component {
     render() {
         const { messages } = this.props;
+
         return (
             <div className="conversation__component">
+                {messages.length === 0 ? <div>No messages sent yet try sending one!</div> : null}
                 {
-                    messages.map(message => {
+                    messages.map((message, key) => {
                         if (message.type === "stranger") {
-                            return <StrangerMessage message={message.data}/>
+                            return <StrangerMessage key={key} message={message.data}/>
                         } else if (message.type === "connect") {
-                            return <ConnectionMessage message={message.data}/>
+                            return <ConnectionMessage key={key} message={message.data}/>
                         } else if (message.type === "disconnect") {
-                            return <DisconnectMessage message={message.data}/>
+                            return <DisconnectMessage key={key} message={message.data}/>
                         } else {
-                            return <Message message={message.data}/>
+                            return <Message key={key} message={message.data}/>
                         }
                     })
                 }

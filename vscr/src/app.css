@@ -26,6 +26,24 @@ main {
     align-items: center;
 }
 
+h1 {
+    margin: 10px;
+}
+
+body::-webkit-scrollbar {
+    width: 12px;
+}
+
+body::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.6); 
+    border-radius: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 14px rgba(0,0,0,0.8); 
+}
+
 @media (max-width: 850px) {
     main {
         width: 100%;

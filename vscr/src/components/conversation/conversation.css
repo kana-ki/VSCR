@@ -2,6 +2,11 @@
     width: 100%;
     display: flex;
     flex-direction: column;
+    height: calc(90vh - 68px);
+    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
+    text-align: justify;
 }
 
 .conversation__component .stranger-message__container {
@@ -10,4 +15,18 @@
 
 .conversation__component .message__component {
     margin: 10px;
+}
+
+.conversation__component::-webkit-scrollbar {
+    width: 12px;
+}
+
+.conversation__component::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.6); 
+    border-radius: 10px;
+}
+
+.conversation__component::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 14px rgba(0,0,0,0.8); 
 }

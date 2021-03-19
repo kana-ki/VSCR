@@ -45,7 +45,7 @@ class Client extends Component {
 
     }
 
-    sendMessage = (event) => {
+    sendMessage = () => {
         const { websocket } = this.props;
 
         try {
@@ -66,7 +66,8 @@ class Client extends Component {
 
         document.querySelector(".input-wrapper__text-area").value = "";
 
-        event.preventDefault();
+        const div = document.querySelector(".conversation__component");
+        div.scrollTop = div.scrollHeight;
     }
     
     setMessageState = (value) => {

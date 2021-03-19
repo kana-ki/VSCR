@@ -1,4 +1,8 @@
 .input-wrapper__component {
+    height: calc(10vh - 68px);
+}
+
+.input-wrapper__component div {
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -7,21 +11,21 @@
     margin-bottom: 15px;
 }
 
-.input-wrapper__component .input__component {
+.input-wrapper__component div .input__component {
     width: 90%;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.input-wrapper__component .send-button__component {
+.input-wrapper__component div .send-button__component {
     width: 10%;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.input-wrapper__component textarea{
+.input-wrapper__component div textarea {
     border: 1px solid var(--tertiary-font-colour);
     border-radius: 15px;
     background-color: transparent;
@@ -39,11 +43,11 @@
     padding: 5px;
 }
 
-.input-wrapper__component textarea:focus {
+.input-wrapper__component div textarea:focus {
     border: none;
 }
 
-.input-wrapper__component textarea:focus {
+.input-wrapper__component div textarea:focus {
     border: 2px solid var(--tertiary-font-colour);
     border-radius: 15px;
     outline-offset: 0px;
