@@ -1,11 +1,11 @@
 import React from 'react'
 import "./loading-content.css"
 
-function LoadingContent() {
+function LoadingContent(props) {
     return (
         <div className="loading-content__component">
             <div className="loading-content__spinner"></div>
-            <p>Connecting to websocket...</p>
+            <p>{props.message}</p>
         </div>
     )
 }

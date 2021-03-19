@@ -63,7 +63,7 @@ class Setup extends Component {
 
     render() {
         if (this.state.ws === null) {
-            return <LoadingContent />
+            return <LoadingContent message={"Connecting to websocket..."}></LoadingContent>
         } else {
             return <Client websocket={this.state.ws} />
         }
