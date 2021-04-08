@@ -7,7 +7,7 @@ namespace VSCR.Api
     internal class Session
     {
 
-        private const int MAX_CLIENTS = 5;
+        private const int MAX_CLIENTS = 2;
 
         public Guid Id { get; init; }
         public IList<Client> Clients { get; init; }
